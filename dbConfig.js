@@ -8,11 +8,9 @@ const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_P
 
 const pool = new Pool({
   connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
-  ssl: isProduction
+  ssl: isProduction ? { rejectUnauthorized: false } : false
 });
+
 const users = [];
 
-module.exports = { users };
-
-module.exports = { pool };
-
+module.exports = { users, pool };
