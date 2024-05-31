@@ -70,8 +70,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/users/login", (req, res) => {
+  res.render("login");
 });
 
 app.get("/users/register", checkAuthenticated, (req, res) => {
