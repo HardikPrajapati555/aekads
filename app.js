@@ -70,7 +70,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/users/login", (req, res) => {
+app.get("", (req, res) => {
   res.render("login");
 });
 
